@@ -3,9 +3,8 @@
 const request = require('request');
 
 const getUrl = (symbol, extension) => {
-    
-    if((extension === undefined) || (extension === "")) {
-        extension = "";
+    if ((extension === undefined) || (extension === '')) {
+        extension = '';
     } else {
         extension = `.${extension}`;
     }
@@ -13,17 +12,18 @@ const getUrl = (symbol, extension) => {
     return url;
 };
 
-const getJson = (url) => 
-    new Promise ((resolve, reject) => {
-        let requestOpts = {url: url, 
-            json : true,
+const getJson = (url) =>
+    new Promise((resolve, reject) => {
+        let requestOpts = {
+            url: url, 
+            json: true,
             headers: {'User-agent': 'request'}
         };
         
         request.get(requestOpts, (err, res, data) => {
-            if(err) {
+            if (err) {
                 reject(err);
-            } else if (res.statusCode != 200) {
+            } else if (res.statusCode !== 200) {
                 reject(res.statusCode);
             } else {
                 resolve(data);
@@ -37,7 +37,7 @@ const getQuote = (symbol, extension) =>
 
         let url = getUrl(symbol, extension);
         let data = getJson(url)
-            .then( (data) => {
+            .then((data) => {
                 resolve ({
                     symbol,
                     currency: data.quoteSummary.result[0].financialData.financialCurrency,
