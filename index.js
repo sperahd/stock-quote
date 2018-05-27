@@ -1,16 +1,16 @@
-'use strict'
+'use strict';
 
-const request = require('request')
+const request = require('request');
 
 const getUrl = (symbol, extension) => {
   if (extension === undefined || extension === '') {
-    extension = ''
+    extension = '';
   } else {
-    extension = `.${extension}`
+    extension = `.${extension}`;
   }
-  let url = `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${symbol}${extension}?&modules=financialData`
-  return url
-}
+  let url = `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${symbol}${extension}?&modules=financialData`;
+  return url;
+};
 
 const getJson = url =>
   new Promise((resolve, reject) => {
@@ -18,22 +18,22 @@ const getJson = url =>
       url: url,
       json: true,
       headers: { 'User-agent': 'request' },
-    }
+    };
 
     request.get(requestOpts, (err, res, data) => {
       if (err) {
-        reject(err)
+        reject(err);
       } else if (res.statusCode !== 200) {
-        reject(res.statusCode)
+        reject(res.statusCode);
       } else {
-        resolve(data)
+        resolve(data);
       }
-    })
-  })
+    });
+  });
 
 const getQuote = (symbol, extension) =>
   new Promise((resolve, reject) => {
-    let url = getUrl(symbol, extension)
+    let url = getUrl(symbol, extension);
     let data = getJson(url)
       .then(data => {
         resolve({
@@ -69,13 +69,13 @@ const getQuote = (symbol, extension) =>
             data.quoteSummary.result[0].financialData.profitMargins.fmt,
           ebitdaMargins:
             data.quoteSummary.result[0].financialData.ebitdaMargins.fmt,
-        })
+        });
       })
       .catch(err => {
-        reject(err)
-      })
-  })
+        reject(err);
+      });
+  });
 
 module.exports = {
   getQuote: getQuote,
-}
+};
