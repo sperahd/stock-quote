@@ -36,7 +36,7 @@ const getQuote = (symbol, extension) =>
     new Promise ((resolve, reject) => {
 
         let url = getUrl(symbol, extension);
-        data = getJson(url)
+        let data = getJson(url)
             .then( (data) => {
                 resolve ({
                     symbol,
