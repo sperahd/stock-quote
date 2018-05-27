@@ -1,6 +1,6 @@
 # stock-quote
 
-> Real time stock quote data using yahoo-stocks.
+> Real time stock quote data retrieved from yahoo-stocks using promises.
 
 ## Info
 
@@ -18,20 +18,25 @@ https://help.yahoo.com/kb/SLN2310.html
 npm i stock-quote
 ```
 ## Usage
+Stocks in NYSE do not require any extension as mentioned in the above specified URL.
+To get stock quote of Google use the following code snippet.
+
 ```
 const quote = require('stock-quote');
-quote.getQuote('GOOGL')
+quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
 .then( (data) => {
     console.log(JSON.stringify(data, null, 4));
 });
+```
+Stocks outside NYSE require a corresponding extenstion for example: 
 
-or 
+NSE has extension as NS, Australian Stock Exchange has extension has AXB. etc.
+To retrieve price of a stock listed in any of such exchanges use the following snippet.
 
+```
+const quote = require('stock-quote');
 quote.getQuote('HDFCBANK', 'NS')
 .then( (data) => {
     console.log(JSON.stringify(data, null, 4));
 });
-
-
-
 ```
