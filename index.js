@@ -41,7 +41,7 @@ const getQuote = (symbol, extension) =>
                 resolve ({
                     symbol,
                     currency: data.quoteSummary.result[0].financialData.financialCurrency,
-                    curPrice: data.quoteSummary.result[0].financialData.currentPrice.raw,
+                    currentPrice: data.quoteSummary.result[0].financialData.currentPrice.raw,
                     totalRevenue: data.quoteSummary.result[0].financialData.totalRevenue.fmt,
                     ebitda: data.quoteSummary.result[0].financialData.ebitda.fmt,
                     cashPerShare: data.quoteSummary.result[0].financialData.totalCashPerShare.raw,
