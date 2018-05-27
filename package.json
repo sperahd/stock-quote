@@ -1,6 +1,6 @@
 {
   "name": "stock-quote",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Real time stock quote data using yahoo-stocks.",
   "main": "index.js",
   "scripts": {
