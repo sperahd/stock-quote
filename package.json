@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/sperahd/stock-quote.git"
   },
-  "author": "",
+  "author": "Ankit Prakash <ankitprakash128@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sperahd/stock-quote/issues"
@@ -18,5 +18,13 @@
   "homepage": "https://github.com/sperahd/stock-quote#readme",
   "dependencies": {
     "request": "^2.87.0"
-  }
+  },
+  "keywords": [
+      "finance",
+      "stocks",
+      "price",
+      "quote",
+      "stock",
+      "scrip"
+  ]
 }
