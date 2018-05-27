@@ -1,5 +1,12 @@
 'use strict';
 
-var stockQuote = require('./index');
+const index = require('../index');
 
-stockQuote.printMsg();
+describe('#getQuote() using Promises', () => {
+    it('should load stock price of HDFCBANK from NSE', () => {
+        return index.getQuote('HDFCBANK', 'NS')
+    .then(data => {
+        expect(data.currency).toEqual('INR');
+    });
+    });
+});

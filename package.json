@@ -4,7 +4,8 @@
   "description": "Real time stock quote data using yahoo-stocks.",
   "main": "index.js",
   "scripts": {
-    "pretest": "eslint",
+    "test": "jest --coverage",
+    "pretest": "eslint *.js",
     "precommit": "eslint",
     "fmt": "prettier --write {index.js,README.md}",
     "build": "microbundle"
@@ -31,12 +32,15 @@
     "scrip"
   ],
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.0.0",
     "babel-preset-es2015": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-strongloop": "^2.1.0",
+    "jest": "^23.0.0",
     "microbundle": "^0.4.4",
     "prettier": "1.12.1"
   }
