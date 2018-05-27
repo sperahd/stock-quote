@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "pretest": "eslint *.js",
+    "pretest": "eslint index.js",
     "precommit": "eslint",
     "fmt": "prettier --write {index.js,README.md}",
     "build": "microbundle"
