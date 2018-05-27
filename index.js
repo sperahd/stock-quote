@@ -10,7 +10,6 @@ const getUrl = (symbol, extension) => {
     }
     let url = `https://query1.finance.yahoo.com/v10/finance/\
 quoteSummary/${symbol}${extension}?&modules=financialData`;
-    console.log(url);
     return url;
 };
 
