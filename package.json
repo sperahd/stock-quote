@@ -20,11 +20,15 @@
     "request": "^2.87.0"
   },
   "keywords": [
-      "finance",
-      "stocks",
-      "price",
-      "quote",
-      "stock",
-      "scrip"
-  ]
+    "finance",
+    "stocks",
+    "price",
+    "quote",
+    "stock",
+    "scrip"
+  ],
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-strongloop": "^2.1.0"
+  }
 }
