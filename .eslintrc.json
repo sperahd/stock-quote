@@ -4,7 +4,8 @@
         "ecmaVersion": 6
     },
     "rules": {
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "noUnusedVars": false
     },
     "env": {
         "es6": true

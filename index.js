@@ -8,7 +8,8 @@ const getUrl = (symbol, extension) => {
     } else {
         extension = `.${extension}`;
     }
-    let url = `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${symbol}${extension}?&modules=financialData`;
+    let url = `https://query1.finance.yahoo.com/v10/finance/\
+quoteSummary/${symbol}${extension}?&modules=financialData`;
     return url;
 };
 
@@ -34,7 +35,7 @@ const getJson = url =>
 const getQuote = (symbol, extension) =>
     new Promise((resolve, reject) => {
         let url = getUrl(symbol, extension);
-        let data = getJson(url)
+        getJson(url)
             .then(data => {
                 resolve({
                     symbol,
