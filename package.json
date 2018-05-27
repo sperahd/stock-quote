@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sperahd/stock-quote/issues"
   },
-  "homepage": "https://github.com/sperahd/stock-quote#readme"
+  "homepage": "https://github.com/sperahd/stock-quote#readme",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
 }
