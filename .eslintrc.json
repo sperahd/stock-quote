@@ -2,5 +2,7 @@
     "extends": "strongloop",
     "parserOptions": {
         "ecmaVersion": 6
-    }
+    },
+    "indent": ["error", 4]
+
 }
