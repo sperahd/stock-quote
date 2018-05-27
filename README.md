@@ -30,7 +30,7 @@ quote.getQuote('GOOGL') // or quote.getQuote('GOOGL', '');
 ```
 Stocks outside NYSE require a corresponding extenstion for example: 
 
-NSE has extension as NS, Australian Stock Exchange has extension has AXB. etc.
+Bombay Stock Exchange has extension as BO, Australian Stock Exchange has extension has AXB. etc.
 To retrieve price of a stock listed in any of such exchanges use the following snippet.
 
 ```
